@@ -27,10 +27,31 @@
       header h1 {
         font-size: 2.5rem;
         color: #00ff99;
+        overflow: hidden;
+        border-right: 0.15em solid #00ff99;
+        white-space: nowrap;
+        animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
       }
       header h2 {
         font-weight: normal;
         color: #999;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #00ff99;
+        }
       }
       nav {
         margin: 2rem 0;
@@ -127,6 +148,7 @@
           >github.com/kya0xC</a
         >
       </p>
+      <p>.onion: <code>http://kya0xcportfolio.onion</code> (Tor Only)</p>
     </section>
 
     <p class="quote">
@@ -136,5 +158,13 @@
     <footer>
       <p>&copy; 2025 Kya0xC. Stay sharp, stay curious.</p>
     </footer>
+
+    <!-- GitHub Actions notice (manual instruction) -->
+    <!-- To auto-deploy this portfolio on GitHub Pages using GitHub Actions:
+  1. Go to your repo -> Settings -> Pages
+  2. Set branch to 'main' and folder to '/ (root)'
+  3. Create a .github/workflows/deploy.yml with a build/publish workflow if using frameworks like React -->
+
+    <!-- Optional: For full React upgrade, consider using Vite + React and integrate this layout there -->
   </body>
 </html>
